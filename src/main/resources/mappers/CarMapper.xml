@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.car.mapper.CarMapper">
+  <resultMap id="BaseResultMap" type="com.qf.car.domain.entity.Car">
+    <!--@mbg.generated-->
+    <id column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="car_name" jdbcType="VARCHAR" property="carName" />
+    <result column="car_brand" jdbcType="VARCHAR" property="carBrand" />
+    <result column="car_number" jdbcType="INTEGER" property="carNumber" />
+    <result column="car_photo" jdbcType="VARCHAR" property="carPhoto" />
+    <result column="car_price" jdbcType="DECIMAL" property="carPrice" />
+    <result column="car_status" jdbcType="INTEGER" property="carStatus" />
+    <result column="car_plate" jdbcType="VARCHAR" property="carPlate" />
+    <result column="car_details" jdbcType="VARCHAR" property="carDetails" />
+  </resultMap>
+
+  <select id="findAll" resultMap="BaseResultMap">
+    select *
+    from car
+  </select>
+  <select id="search" resultMap="BaseResultMap">
+      select *
+      from car
+      limit #{page},#{size};
+  </select>
+
+</mapper>
